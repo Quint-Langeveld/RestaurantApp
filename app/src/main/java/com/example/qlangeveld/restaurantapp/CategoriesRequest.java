@@ -4,6 +4,7 @@ import android.content.Context;
 import android.telecom.Call;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -19,17 +20,13 @@ import java.util.ArrayList;
 
 public class CategoriesRequest implements Response.Listener<JSONObject>, Response.ErrorListener {
 
-    private Context myContext;
-    private ArrayList<String> ArrayListCategories = new ArrayList<>();
-    private Callback activity = new Callback() {
-        @Override
-        public void gotCategories(ArrayList<String> categories) {
-        }
+    public interface Callback {
+        void gotCategories(ArrayList<String> categories);
+        void gotCategoriesError(String message);
+    }
 
-        @Override
-        public void gotCategoriesError(String message) {
-        }
-    };
+    private Context myContext;
+    public ArrayList<String> ArrayListCategories = new ArrayList<>();
 
 
     // the constructor
@@ -40,10 +37,10 @@ public class CategoriesRequest implements Response.Listener<JSONObject>, Respons
 
     public void getCategories(final Callback activity) {
         RequestQueue queue = Volley.newRequestQueue(myContext);
-        String url = "https://resto.mprog.nl";
+        String url = "https://resto.mprog.nl/categories";
 
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null,
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                     new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -60,7 +57,6 @@ public class CategoriesRequest implements Response.Listener<JSONObject>, Respons
                 catch (JSONException e) {}
 
                 activity.gotCategories(ArrayListCategories);
-                getCategories(activity);
             }
         }, new Response.ErrorListener() {
             @Override
@@ -71,12 +67,6 @@ public class CategoriesRequest implements Response.Listener<JSONObject>, Respons
         });
 
         queue.add(jsonObjectRequest);
-    }
-
-
-    public interface Callback {
-        void gotCategories(ArrayList<String> categories);
-        void gotCategoriesError(String message);
     }
 
 
