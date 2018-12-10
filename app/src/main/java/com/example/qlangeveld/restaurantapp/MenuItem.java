@@ -7,10 +7,13 @@ public class MenuItem implements Serializable {
     private int price;
 
     // constructor:
-    public MenuItem() {
+    public MenuItem(String name, String description, String imageUrl, String category, int price) {
+        this.name = name;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.category = category;
+        this.price = price;
     }
-
-
 
     public String getName() {
         return name;
