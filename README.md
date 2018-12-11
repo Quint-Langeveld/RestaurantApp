@@ -10,4 +10,4 @@ Zie hieronder vorbeelden van de 3 schermen.
 
 ![alt text](https://github.com/Quint-Langeveld/RestaurantApp/blob/master/doc/Screenshot_20181211-125224.png)
 ![alt text](https://github.com/Quint-Langeveld/RestaurantApp/blob/master/doc/Screenshot_20181211-125230.png)
-![alt text]()
+![alt text](https://github.com/Quint-Langeveld/RestaurantApp/blob/master/doc/Screenshot_20181211-125248.png)
