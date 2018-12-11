@@ -41,10 +41,11 @@ public class MenuAdapter extends android.widget.ArrayAdapter<MenuItem> {
 
         int price = currentMenuItem.getPrice();
         String Price = Integer.toString(price);
+        String stringPrice = "€ " + Price + ",-";
 
 
         menuTitle.setText(currentMenuItem.getName());
-        menuPrice.setText(Price);
+        menuPrice.setText(stringPrice);
 
 
         return convertView;

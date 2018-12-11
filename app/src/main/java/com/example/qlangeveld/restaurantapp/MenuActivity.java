@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class MenuActivity extends AppCompatActivity implements MenuRequest.Callback {
 
@@ -36,13 +37,26 @@ public class MenuActivity extends AppCompatActivity implements MenuRequest.Callb
     @Override
     public void gotMenu(ArrayList<MenuItem> myCategories) {
         this.categories = myCategories;
-        Log.d("size of category", "gotMenu: " + categories.size());
+        Log.d("size of categories list", "gotMenu: " + categories.size());
+
+        int lengthCatagories = categories.size();
         // and fill with the right menuItems
         for (int i=0; i < categories.size(); i++) {
-            if (!(categories.get(i).getCategory().equals(category))) {
-                categories.remove(categories.get(i));
+            Log.d("i", "gotMenu: " + i);
+            Log.d("next item", "gotMenu: " + categories.get(i).getName());
+
+            MenuItem currentMenuItem = categories.get(i);
+
+            if (!(currentMenuItem.getCategory().equals(category))) {
+                categories.remove(currentMenuItem);
+                Log.d("moet ik niet", "gotMenu: ");
+                i -= 1;
+            } else {
+                Log.d("vind ik lekker", "gotMenu: ");
             }
         }
+
+        Log.d("en nu de lengte van categories", "gotMenu: " + categories.size());
 
         MenuAdapter menuAdapter = new MenuAdapter(this, R.layout.menu_grid, categories);
         ListView listView = findViewById(R.id.listViewMenu);
@@ -66,9 +80,9 @@ public class MenuActivity extends AppCompatActivity implements MenuRequest.Callb
         }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        menuRequest.getMenu(this);
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        menuRequest.getMenu(this);
+//    }
 }

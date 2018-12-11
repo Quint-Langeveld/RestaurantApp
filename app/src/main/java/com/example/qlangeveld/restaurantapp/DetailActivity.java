@@ -33,12 +33,8 @@ public class DetailActivity extends AppCompatActivity {
         description.setText(currentMenuItem.getDescription());
 
         int Price = currentMenuItem.getPrice();
-        String stringPrice = Integer.toString(Price);
+        String stringPrices = Integer.toString(Price);
+        String stringPrice = "€ " + stringPrices + ",-";
         price.setText(stringPrice);
-
     }
-
-
-
-
 }

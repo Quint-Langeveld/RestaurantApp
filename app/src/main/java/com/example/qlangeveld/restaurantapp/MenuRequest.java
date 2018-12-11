@@ -1,6 +1,7 @@
 package com.example.qlangeveld.restaurantapp;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.textclassifier.TextLinks;
 import android.widget.Toast;
 
@@ -62,6 +63,8 @@ public class MenuRequest implements Response.Listener<JSONObject>, Response.Erro
             activity.gotMenuError(message);
         }
 
+        Log.d("hoeveel JSONArrays", "onResponse: " + JSONArrayCategories.length());
+
         for (int i=0; i < JSONArrayCategories.length(); i++) {
             JSONObject newMenuItem;
 
@@ -83,6 +86,8 @@ public class MenuRequest implements Response.Listener<JSONObject>, Response.Erro
             }
 
         }
+        Log.d("hoeveel items in ArrayListMenuItems", "onResponse: " + ArrayListMenuItems.size());
         activity.gotMenu(ArrayListMenuItems);
+
     }
 }
