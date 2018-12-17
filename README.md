@@ -8,7 +8,5 @@ De app is onderverdeel din 3 schermen.
 
 Zie hieronder vorbeelden van de 3 schermen.
 
-<img src="https://github.com/Quint-Langeveld/RestaurantApp/blob/master/doc/Screenshot_20181211-125224.png" width="50%" height="50%"/>
-<img src="https://github.com/Quint-Langeveld/RestaurantApp/blob/master/doc/Screenshot_20181211-125230.png" width="50%" height="50%"/>
-<img src="https://github.com/Quint-Langeveld/RestaurantApp/blob/master/doc/Screenshot_20181211-125248.png" width="50%" height="50%"/>
+<img src="https://github.com/Quint-Langeveld/RestaurantApp/blob/master/doc/Screenshot_20181211-125224.png" width="30%" height="30%"/> <img src="https://github.com/Quint-Langeveld/RestaurantApp/blob/master/doc/Screenshot_20181211-125230.png" width="30%" height="30%"/> <img src="https://github.com/Quint-Langeveld/RestaurantApp/blob/master/doc/Screenshot_20181211-125248.png" width="30%" height="30%"/>
 
